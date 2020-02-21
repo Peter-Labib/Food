@@ -1,0 +1,21 @@
+%after-heading {
+    position: absolute;
+    content: '';
+    bottom: -14px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 73%;
+    height: 10px;
+    background: url(assets/img/Brush.png) left top/contain no-repeat;
+}
+
+%after-section {
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: -7px;
+    left: 0;
+    height: 2vh;
+    background: url('assets/img/after-section.png') left top /contain;
+    z-index: 2;
+}

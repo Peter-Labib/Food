@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import 'assets/scss/utilitie/variables';
+@import 'assets/scss/utilitie/placeholders';
+@import 'assets/scss/utilitie/animations';
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background: url('./assets/img/logo.png') top 5% left 10%/ 80px no-repeat, url('./assets/img/header.jpg') center/cover, ;
+    height: 100vh;
+    position: relative;
+
+    .header__title {
+        position: absolute;
+        top: 30%;
+        left: 3%;
+        color: #FFF;
+    }
+
+    .header__offers-container {
+        position: absolute;
+        background: url('assets/img/splash.png') left -5px top 0 /contain no-repeat;
+        top: 48%;
+        left: 3%;
+        width: 90%;
+        padding: .5rem;
+
+        .header__offer {
+            color: #FFF;
+            width: 70%;
+            margin-top: 1.2rem;
+            margin-left: 1rem;
+            white-space: pre-line;
+        }
+    }
+
+    &::after {
+        @extend %after-section
+    }
+
+    .header__order-btn {
+        position: absolute;
+        top: 70%;
+        left: 10%;
+        color: $main-color;
+        background-color: $secondry-color;
+    }
+
+    .header__arrow {
+        position: absolute;
+        top: 90%;
+        left: 45%;
+        width: 40px;
+        height: 50px;
+        animation: arrow ease-in-out 1s infinite;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+    }
+
+}
+
+// types of food
+.food-types {
+    padding: 2rem 0;
+
+    .food-types__heading {
+        text-align: center;
+        color: $main-color;
+        position: relative;
+
+        &::after {
+            @extend %after-heading;
+        }
+    }
+}
+
+// delivery
+.delivery {
+    background-color: $secondry-color;
+    position: relative;
+    color: #FFF;
+    white-space: pre-line;
+    padding: 2rem .4rem;
+    position: relative;
+
+    h2 {
+        // padding-left: .9rem;
+        // padding-right: .4rem;
+        padding-top: 1rem;
+        height: 6rem;
+        background: url('assets/img/red-brush.png') left -5px top 0/100% 100% no-repeat;;
+
+    }
+
+    &::after {
+        @extend %after-section
+    }
+}
+
+// Popular Recipes
+.popular-recipes {
+    padding: 2rem 0;
+    position: relative;
+
+    h2,
+    p {
+        text-align: center;
+    }
+
+    h2 {
+        position: relative;
+
+        &::after {
+            @extend %after-heading
+        }
+    }
+
+    p {
+        margin: 3rem 0;
+    }
+
+    .popular-recipes__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        row-gap: 10px;
+        column-gap: 10px;
+        margin-bottom: 1rem;
+
+        .popular-recipes__card {
+            .card-subtitle svg {
+                color: $secondry-color;
+            }
+
+            button {
+                color: #FFF;
+                margin-right: .3rem;
+            }
+
+            span {
+                color: $main-color;
+            }
+        }
+    }
+
+    &::after {
+        @extend %after-section
+    }
+}
+
+// work hours
+.work-hours {
+    background: url(assets/img/work-ours.jpg) left 50% top 50%/cover;
+    white-space: pre-line;
+    color: #FFF;
+    padding: 2rem 0;
+    position: relative;
+
+    .work-hours__days-count-container {
+        display: flex;
+        text-align: center;
+
+        .work-hours__days-count {
+            margin-right: .5rem;
+
+            .work-hours__days-count__digit {
+                background-color: $secondry-color;
+                width: 45px;
+                height: 40px;
+                padding-top: .5rem;
+                display: block;
+            }
+        }
+    }
+
+    &::after {
+        @extend %after-section
+    }
+}
+
+// testimonials
+.testimonials {
+    padding: 2rem 0;
+    position: relative;
+
+    .testimonials__heading,
+    .testimonials__paragraph {
+        text-align: center;
+    }
+
+    .testimonials__heading {
+        color: $main-color;
+        position: relative;
+        margin-bottom: 3rem;
+        padding-bottom: .5rem;
+
+        &::after {
+            @extend %after-heading
+        }
+    }
+
+    .testimonials__carousel {
+        margin-top: 2rem;
+
+        .testimonial__client-rate {
+
+            svg {
+                color: $main-color;
+            }
+
+            blockquote {
+                p {
+                    margin-top: .5rem;
+                }
+
+                footer {
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        top: 50%;
+                        //    right: 38%;
+                        width: 2rem;
+                        height: 1px;
+                        content: '';
+                        background-color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &::after {
+        @extend %after-section
+    }
+}
+
+// services quality
+.services-quality {
+    background-color: $secondry-color;
+    position: relative;
+    text-align: center;
+    white-space: pre-line;
+    padding: 2rem 0;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        .services-quality__service {
+            width: 300px;
+            background-color: #FFF;
+            margin-bottom: .5rem;
+            padding: 1rem;
+
+            img {
+                margin-bottom: .5rem;
+            }
+
+            h5 {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: -10px;
+                    transform: translate(-50%);
+                    width: 50px;
+                    height: 2px;
+                    background-color: $secondry-color;
+                }
+            }
+        }
+    }
+
+    &::after {
+        @extend %after-section
+    }
+}
+
+// contact us
+.call-us {
+    color: #FFF;
+    background-color: $main-color;
+    position: relative;
+
+    .call-us__info {
+        padding: 2rem ;
+
+        .call-us__info__heading {
+            color: #FFF;
+            margin-bottom: 1rem;
+            cursor: none;
+        }
+
+        .call-us__info__phone {
+            margin-bottom: 1rem;
+        }
+
+        .call-us__info__container {
+            display: flex;
+
+            .call-us__info__container__icon {
+                color: $secondry-color;
+                padding-right: 1rem;
+
+            }
+
+            small {
+                display: block;
+            }
+
+            &:last-of-type {
+                margin-bottom: 1rem;
+            }
+        }
+
+        hr {
+            width: 80%;
+        }
+    }
+
+    .call-us__map {
+        overflow: hidden;
+        padding-top: 1.5rem;
+    }
+
+    &::after{
+        @extend %after-section
+    }
+}
+
+// footer
+footer {
+    padding: 2rem 0;
+
+    .pay-methods {
+        .pay-methods__logo {
+            width: 150px;
+            margin-bottom: .8rem;
+        }
+
+        .pay-methods__pic {
+            width: 100%;
+        }
+    }
+
+    hr {
+        width: 80%;
+    }
+
+    .copyright {
+        text-align: center;
+        padding: .3rem 0;
+        display: block;
+    }
+}
