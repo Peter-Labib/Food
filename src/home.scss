@@ -7,6 +7,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+// header 
 .header {
     background: url('./assets/img/logo.png') top 5% left 10%/ 80px no-repeat, url('./assets/img/header.jpg') center/cover, ;
     height: 100vh;
@@ -51,7 +52,8 @@ body {
     .header__arrow {
         position: absolute;
         top: 90%;
-        left: 45%;
+        left: 50%;
+        transform: translate(-50%);
         width: 40px;
         height: 50px;
         animation: arrow ease-in-out 1s infinite;
@@ -61,21 +63,55 @@ body {
             width: 100%;
         }
     }
-
 }
 
 // types of food
 .food-types {
     padding: 2rem 0;
+    text-align: center;
+    position: relative;
 
     .food-types__heading {
-        text-align: center;
         color: $main-color;
         position: relative;
+        margin-bottom: 3rem;
 
         &::after {
             @extend %after-heading;
+            width: 200px;
+            transform: translate(-50%);
         }
+    }
+
+    .food-types__flex-container {
+        // max-width: 1200px;
+        justify-content: space-around;
+
+        .food-type {
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            overflow: hidden;
+            margin: 1rem;
+            transition: all ease .4s;
+
+            &:hover {
+                border: 1px solid rgba(0, 0, 0, .3);
+                box-shadow: 0 3px 21px -2px rgba(0, 0, 0, 0.5);
+                transform: translateY(-4px);
+            }
+
+            img {
+
+                margin-bottom: 1rem;
+            }
+
+        }
+    }
+
+    &::after {
+        @extend %after-section;
+        bottom: -12px;
     }
 }
 
@@ -100,9 +136,10 @@ body {
         }
 
     }
-        &::after {
-            @extend %after-section
-        }
+
+    &::after {
+        @extend %after-section
+    }
 }
 
 // Popular Recipes
@@ -235,6 +272,29 @@ body {
                 }
             }
         }
+
+        .owl-dots {
+            position: absolute;
+            bottom: -3%;
+            left: 49%;
+
+            .owl-dot {
+                span {
+                    width: 11px;
+                    height: 7px;
+                    margin: 5px 4px;
+                    transition: all ease-in-out .4s;
+                    background: #B7B5B5;
+                }
+
+                &.active {
+                    span {
+                        width: 14px;
+                        background-color: $secondry-color;
+                    }
+                }
+            }
+        }
     }
 
     &::after {
@@ -310,6 +370,7 @@ body {
 
         .call-us__info__container {
             display: flex;
+            margin: 1rem;
 
             .call-us__info__container__icon {
                 color: $secondry-color;
@@ -321,13 +382,18 @@ body {
                 display: block;
             }
 
-            &:last-of-type {
-                margin-bottom: 1rem;
-            }
+
         }
 
         hr {
             width: 80%;
+        }
+
+        .call-us__info__social-media-icons {
+            a {
+                margin-right: .5rem;
+                color: #FFF;
+            }
         }
     }
 
@@ -352,9 +418,44 @@ footer {
         }
 
         .pay-methods__pic {
-            width: 100%;
+            width: 80%;
         }
     }
+
+    .useful-links {
+        .useful-links__heading {
+            @extend %footer-heading;
+        }
+
+        .useful-links__flex-container {
+            display: flex;
+            justify-content: space-between;
+
+            .useful-links__flex-container__1st-groub,
+            .useful-links__flex-container__2nd-groub {
+                list-style: none;
+                margin-top: 3rem;
+
+                li {
+
+                    margin-bottom: .8rem;
+
+                    a {
+                        text-decoration: none;
+                        color: #686868;
+                        font-weight: 100;
+                    }
+                }
+
+            }
+
+            .useful-links__flex-container__1st-groub {
+                padding-left: 0;
+            }
+        }
+    }
+
+    
 
     hr {
         width: 80%;
@@ -426,8 +527,142 @@ footer {
     // popular recipes
     .popular-recipes {
         padding: 4rem 0;
+
         h2::after {
             transform: translate(-20%);
         }
     }
+
+    // testimonials
+    .testimonials .testimonials__carousel{
+        .owl-dots {
+            top:80%
+        }
+    }
+
+    //footer
+    footer {
+        .instagram-feed {
+            .instagram-feed__heading {
+                color: $main-color;
+                position: relative;
+                margin-bottom: 2rem;
+            
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 50px;
+                    height: 1px;
+                    background-color: $secondry-color;
+                    bottom: -20px;
+                    left: 0;
+                }
+            }
+    
+            .instagram-feed__link {
+                float: left;
+                overflow: hidden;
+                position: relative;
+                margin: .5rem;
+                margin-left: 0;
+    
+                .instagram-feed__link__pic {
+                    width: 100%;
+                }
+    
+                .instagram-feed__link__overlay {
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    background-color: rgba($color: #000000, $alpha: .7);
+                    transition: opacity ease-in-out .4s;
+                    opacity: 0;
+    
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: rgba(255, 255, 255, 0.808);
+                    }
+    
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+    
+        }
+    }
+}
+
+// desktop media
+@media (min-width: 1200px) {
+
+    // header 
+    .header {
+        background: url('./assets/img/logo.png') top 5% left 10%/ 130px no-repeat, url('./assets/img/header.jpg') center/cover, ;
+
+        .header__title {
+            font-size: 3rem;
+        }
+
+        .header__offers-container {
+            .header__offer {
+                font-size: 1.5rem;
+                padding: .5rem;
+            }
+        }
+
+        .header__order-btn {
+            padding: .7rem;
+            width: 10%;
+            left: 5%;
+        }
+    }
+
+    // Testimonials
+    .testimonials {
+        padding: 5rem 0;
+
+        .testimonials__heading::after {
+            left: 42%;
+            width: 19%;
+        }
+
+        .testimonials__carousel {
+            &::after {
+                content: '';
+                position: absolute;
+                width: 400px;
+                height: 400px;
+                bottom: -15px;
+                left: -15px;
+                border-radius: 10px;
+                z-index: -1;
+                background-color: $main-color;
+            }
+        }
+    }
+
+    // contact us
+    .call-us .call-us__info {
+        padding-left: 3rem;
+
+        .call-us__info__heading {
+            margin-bottom: 2rem;
+        }
+
+        .call-us__info__phone {
+            margin-bottom: 2rem;
+        }
+
+        .call-us__info__container {
+            margin-bottom: 2rem;
+        }
+    }
+
+    
 }

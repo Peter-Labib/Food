@@ -19,3 +19,19 @@
     background: url('assets/img/after-section.png') left top /contain;
     z-index: 2;
 }
+
+%footer-heading {
+    color: $main-color;
+    position: relative;
+    margin-bottom: 2rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 1px;
+        background-color: $secondry-color;
+        bottom: -20px;
+        left: 0;
+    }
+}
