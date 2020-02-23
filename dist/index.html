@@ -5,12 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>food</title>
-    <link rel="shortcut icon" href="./img/footer-logo.png">
 <link href="./main.css" rel="stylesheet"></head>
 
 <body>
     <header class="header">
-        <nav></nav>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#popular-recipes">recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us">contact us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
         <h2 class="h1 header__title">Party Time!</h2>
         <div class="header__offers-container">
             <p class="header__offer">Buy any 2 burgers and
@@ -23,7 +47,7 @@
     </header>
 
     <!-- types of food -->
-    <section class="food-types d-none d-xl-block">
+    <section class="food-types d-none d-xl-block wow fadeInUp">
         <h2 class="food-types__heading">Want To Eat ?</h2>
         <div class="food-types__flex-container row no-gutters">
             <div class="food-type col-2">
@@ -50,7 +74,7 @@
     </section>
 
     <!-- delivery -->
-    <section class="delivery">
+    <section class="delivery wow fadeInUp">
         <div class="delivery__advantages">
             <h2>We Guarantee
                 30 Minutes Delivery</h2>
@@ -61,7 +85,7 @@
     </section>
 
     <!-- Popular Recipes -->
-    <section class="popular-recipes">
+    <section class="popular-recipes wow fadeInUp" id="popular-recipes">
         <div class="container">
             <h2 class="h2">Our Most Popular Recipes</h2>
             <p>Try our Most Delicious food and it usually take minutes to deliver!</p>
@@ -138,7 +162,7 @@
     </section>
 
     <!-- work hours -->
-    <section class="work-hours">
+    <section class="work-hours wow fadeInUp">
         <div class="container">
             <h3>Happy Hours</h3>
             <p>Friday 5pm – 8pm
@@ -166,7 +190,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="testimonials wow fadeInUp" id="testimonials">
         <h2 class="testimonials__heading">Client Testimonials</h2>
         <p class="testimonials__paragraph">Try our Most Delicious food and it usually take minutes to deliver!</p>
         <div class="container">
@@ -215,7 +239,7 @@
     </section>
 
     <!-- services quality -->
-    <section class="services-quality">
+    <section class="services-quality wow fadeInUp">
         <div class="container">
             <div class="services-quality__service rounded">
                 <img src="img/3-1.png" alt="">
@@ -247,7 +271,7 @@
     </section>
 
     <!-- contact us -->
-    <section class="call-us">
+    <section class="call-us wow fadeInUp" id="contact-us">
         <div class="row no-gutters">
             <div class="call-us__info col-12 col-lg-6 align-self-lg-center">
                 <h3 class="call-us__info__heading btn btn-primary rounded-pill">Call Us</h3>
@@ -288,7 +312,7 @@
     </section>
 
     <!-- footer -->
-    <footer>
+    <footer class="wow fadeInUp">
         <div class="container">
             <div class="row">
                 <div class="pay-methods col-12 col-lg-7 col-xl-5">
@@ -347,6 +371,8 @@
         <hr>
         <small class="copyright">© 2019, Hot Burgers. All rights reserved</small>
     </footer>
+    <script>
+        </script>
 <script type="text/javascript" src="./bundle.js"></script></body>
 
 </html>

@@ -29,11 +29,7 @@ module.exports = {
   //     }
   //   }
   // },
-  devServer: {
-    // contentBase: path.join(__dirname, 'dist'),
-    // index: 'index.html', 
-    // port: 9000
-  },
+
 
   module: {
     rules: [
@@ -97,10 +93,14 @@ module.exports = {
     }),
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+      whitelist: () => ['owl', 'svg', 'fadeOut'],
+      whitelistPatterns: () => [/^owl/],
+      whitelistPatternsChildren: () => [/^owl/]
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     })
   ]
 }

@@ -3,16 +3,23 @@
 @import 'assets/scss/utilitie/placeholders';
 @import 'assets/scss/utilitie/animations';
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Poppins', sans-serif;
 }
 
 // header 
 .header {
-    background: url('./assets/img/logo.png') top 5% left 10%/ 80px no-repeat, url('./assets/img/header.jpg') center/cover, ;
+    background: url('./assets/img/logo.png') top 9vh left 10%/ 80px no-repeat, url('./assets/img/header.jpg') center/cover, ;
     height: 100vh;
     position: relative;
 
+    .navbar {
+        z-index: 500;
+        background-color: rgba($color: $main-color, $alpha: .9);
+    }
     .header__title {
         position: absolute;
         top: 30%;
@@ -223,6 +230,7 @@ body {
 }
 
 // testimonials
+
 .testimonials {
     padding: 2rem 0;
     position: relative;
@@ -603,7 +611,7 @@ footer {
 
     // header 
     .header {
-        background: url('./assets/img/logo.png') top 5% left 10%/ 130px no-repeat, url('./assets/img/header.jpg') center/cover, ;
+        background: url('./assets/img/logo.png') top 11vh left 10%/ 130px no-repeat, url('./assets/img/header.jpg') center/cover, ;
 
         .header__title {
             font-size: 3rem;
@@ -662,7 +670,15 @@ footer {
         .call-us__info__container {
             margin-bottom: 2rem;
         }
-    }
 
+        .call-us__info__social-media-icons a {
+            opacity: .8;
+            transition: opacity ease-in-out .3s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
     
 }
