@@ -6,20 +6,22 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
 }
 
 // header 
 .header {
-    background: url('./assets/img/logo.png') top 9vh left 10%/ 80px no-repeat, url('./assets/img/header.jpg') center/cover, ;
-    height: 100vh;
+    background: url('./assets/img/logo.png') top 11vh left 10%/ 80px no-repeat, url('./assets/img/header.jpg') center/cover, ;
+    height: 90vh;
     position: relative;
 
     .navbar {
         z-index: 500;
         background-color: rgba($color: $main-color, $alpha: .9);
     }
+
     .header__title {
         position: absolute;
         top: 30%;
@@ -176,6 +178,7 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         row-gap: 10px;
         column-gap: 10px;
+        justify-content: center;
         margin-bottom: 1rem;
 
         .popular-recipes__card {
@@ -255,6 +258,7 @@ body {
         margin-top: 2rem;
 
         .testimonial__client-rate {
+            overflow: hidden;
 
             svg {
                 color: $main-color;
@@ -265,8 +269,13 @@ body {
                     margin-top: .5rem;
                 }
 
+
                 footer {
                     position: relative;
+
+                    @media (max-width: 991px) and (max-height:600px) {
+                        padding: 0;
+                    }
 
                     &::after {
                         position: absolute;
@@ -284,7 +293,8 @@ body {
         .owl-dots {
             position: absolute;
             bottom: -3%;
-            left: 49%;
+            left: 50%;
+            transform: translate(-50%);
 
             .owl-dot {
                 span {
@@ -463,7 +473,7 @@ footer {
         }
     }
 
-    
+
 
     hr {
         width: 80%;
@@ -513,6 +523,11 @@ footer {
 // large screen 
 @media (min-width:992px) {
 
+    // header 
+    .header {
+        height: 100vh;
+    }
+
     // delivery
     .delivery {
         position: relative;
@@ -542,9 +557,10 @@ footer {
     }
 
     // testimonials
-    .testimonials .testimonials__carousel{
+    .testimonials .testimonials__carousel {
         .owl-dots {
-            top:80%
+            top: 80%;
+            left: 55%;
         }
     }
 
@@ -555,7 +571,7 @@ footer {
                 color: $main-color;
                 position: relative;
                 margin-bottom: 2rem;
-            
+
                 &::after {
                     content: '';
                     position: absolute;
@@ -566,18 +582,18 @@ footer {
                     left: 0;
                 }
             }
-    
+
             .instagram-feed__link {
                 float: left;
                 overflow: hidden;
                 position: relative;
                 margin: .5rem;
                 margin-left: 0;
-    
+
                 .instagram-feed__link__pic {
                     width: 100%;
                 }
-    
+
                 .instagram-feed__link__overlay {
                     position: absolute;
                     width: 100%;
@@ -587,7 +603,7 @@ footer {
                     background-color: rgba($color: #000000, $alpha: .7);
                     transition: opacity ease-in-out .4s;
                     opacity: 0;
-    
+
                     svg {
                         position: absolute;
                         top: 50%;
@@ -595,13 +611,13 @@ footer {
                         transform: translate(-50%, -50%);
                         color: rgba(255, 255, 255, 0.808);
                     }
-    
+
                     &:hover {
                         opacity: 1;
                     }
                 }
             }
-    
+
         }
     }
 }
@@ -680,5 +696,5 @@ footer {
             }
         }
     }
-    
+
 }
