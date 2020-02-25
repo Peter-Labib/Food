@@ -14,7 +14,7 @@ body {
 // header 
 .header {
     background: url('./assets/img/logo.png') top 11vh left 10%/ 80px no-repeat, url('./assets/img/header.jpg') center/cover, ;
-    height: 90vh;
+    height: 100vh;
     position: relative;
 
     .navbar {
@@ -60,7 +60,7 @@ body {
 
     .header__arrow {
         position: absolute;
-        top: 90%;
+        top: 85%;
         left: 50%;
         transform: translate(-50%);
         width: 40px;
@@ -156,49 +156,55 @@ body {
     padding: 2rem 0;
     position: relative;
 
-    h2,
-    p {
-        text-align: center;
-    }
+    .container {
+        @media (min-width:1201px) and (max-width: 1315px) {
+            max-width: 1040px;
+        }
 
-    h2 {
-        position: relative;
+        h2,
+        p {
+            text-align: center;
+        }
+
+        h2 {
+            position: relative;
+
+            &::after {
+                @extend %after-heading
+            }
+        }
+
+        p {
+            margin: 3rem 0;
+        }
+
+        .popular-recipes__cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            row-gap: 10px;
+            column-gap: 10px;
+            justify-content: center;
+            margin-bottom: 1rem;
+
+            .popular-recipes__card {
+                .card-subtitle svg {
+                    color: $secondry-color;
+                }
+
+                button {
+                    color: #FFF;
+                    margin-right: .3rem;
+                }
+
+                span {
+                    color: $main-color;
+                }
+            }
+        }
 
         &::after {
-            @extend %after-heading
+            @extend %after-section
         }
-    }
-
-    p {
-        margin: 3rem 0;
-    }
-
-    .popular-recipes__cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        row-gap: 10px;
-        column-gap: 10px;
-        justify-content: center;
-        margin-bottom: 1rem;
-
-        .popular-recipes__card {
-            .card-subtitle svg {
-                color: $secondry-color;
-            }
-
-            button {
-                color: #FFF;
-                margin-right: .3rem;
-            }
-
-            span {
-                color: $main-color;
-            }
-        }
-    }
-
-    &::after {
-        @extend %after-section
     }
 }
 
@@ -644,6 +650,10 @@ footer {
             padding: .7rem;
             width: 10%;
             left: 5%;
+        }
+
+        .header__arrow {
+            top:90%
         }
     }
 
